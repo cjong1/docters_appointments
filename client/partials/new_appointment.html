@@ -1,0 +1,27 @@
+<div ng-controller='appointmentsController'>
+	<h1>New Appointment</h1>
+
+	<form name='myForm'>
+		Date: <input type='date' min='2015-04-26' ng-model='newAppt.date' /><br>
+		Time:
+			<select ng-model='newAppt.time'>
+				<option>8:00 AM</option>
+				<option>9:00 AM</option>
+				<option>10:00 AM</option>
+				<option>11:00 AM</option>
+				<option>12:00 PM</option>
+				<option>1:00 PM</option>
+				<option>2:00 PM</option>
+				<option>3:00 PM</option>
+				<option>4:00 PM</option>
+				<option>5:00 PM</option>
+			</select>
+
+		Complaint: <br>
+			<span class='error' ng-show='myForm.complaint.$error.minlength'>Your complaint must be at least 10 characters long!</span>
+			<br><textarea rows='4' ng-model='newAppt.complaint' ng-minlength='10' name='complaint'></textarea><br>
+		<input type='submit' value='add appointment' ng-click='addAppt()'>
+		<h5>{{message.success}}</h5>
+		<h5>{{message.error}}</h5>
+	</form>
+</div>

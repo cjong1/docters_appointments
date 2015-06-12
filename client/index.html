@@ -1,0 +1,20 @@
+<html ng-app='appointments'>
+<head>
+	<title>Doctor's Appointments</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.1.5/angular-local-storage.min.js"></script>
+	<script src="app.js"></script>
+	<script src="factories/patientsFactory.js"></script>
+	<script src="f_controllers/patients_controller.js"></script>
+	<script src="f_controllers/appointments_controller.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div ng-view=""></div>
+	</div>
+</body>
+</html>

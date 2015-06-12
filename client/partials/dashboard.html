@@ -1,0 +1,26 @@
+<div ng-controller='appointmentsController'>
+	<h1>Doctor's Appointments</h1>
+	<input type='text' placeholder='search...' ng-model='filter_text'>
+
+	<div>
+		<table>
+			<thead>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Patient Name</th>
+				<th>Complaint</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat='appointment in appointments | filter: filter_text | orderBy: "date"'>
+					<td ng-bind='appointment.date'></td>
+					<td ng-bind='appointment.time'></td>
+					<td ng-bind='appointment.name'></td>
+					<td ng-bind='appointment.complaint'></td>
+					<td><a href="" ng-if='appointment.name === current_patient' ng-click='removeAppt(appointment)'>Cancel</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="#/new_appointment"><button>New Appointment</button></a>
+	</div>
+</div>
